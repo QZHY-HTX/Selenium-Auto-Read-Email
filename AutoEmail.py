@@ -16,8 +16,8 @@ wait = WebDriverWait(driver, 10)  # 等待最多10秒
 def login():
     input_username = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="username"]')))  
     input_userpassword = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="password"]')))
-    input_username.send_keys('xxx')
-    input_userpassword.send_keys('xxx')
+    input_username.send_keys('')
+    input_userpassword.send_keys('')
     input_submit = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="login_submit"]')))
     input_submit.click()
     time.sleep(5)
@@ -40,6 +40,7 @@ def getEmailList():
     for i in range(len(message_list)):
         message_list[i].click()
         time.sleep(2)
+    
 #正式开始
 login()
 otherServer()
